@@ -14,7 +14,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
+    playerSelection = playerSelection.toString().toLowerCase();
 
     // Rock vs Paper, Rock vs Scissors, Rock vs Rock
     if((playerSelection == "rock") && (computerSelection == "paper")) 
@@ -35,6 +35,14 @@ function playRound(playerSelection, computerSelection) {
         return "Tie game!"
     else if((playerSelection == "paper") && (computerSelection == "scissors"))
         return "You lose! Scissors beats Paper"
-    else 
+    else if((playerSelection == "paper") && (computerSelection == "rock"))
         return "You win! Paper beats Rock"
+}
+
+function game() {
+    for(let i = 0; i < 5; i++) {
+        let playerSelection = window.prompt("Choose: Rock, Paper, or Scissors")
+        let computerSelection = getComputerChoice()
+        console.log(playRound(playerSelection, computerSelection));
+    }
 }
