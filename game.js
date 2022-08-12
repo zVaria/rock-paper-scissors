@@ -1,6 +1,8 @@
+const btn = document.querySelectorAll('button')
+
 function getComputerChoice() {
     let randomAssignment = Math.floor(Math.random() * 3);
-    let computerChoice
+    let computerChoice = "";
 
     if(randomAssignment === 0) {
         computerChoice = "rock"
@@ -15,6 +17,7 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toString().toLowerCase();
+    console.log(playerSelection, computerSelection);
 
     // Rock vs Paper, Rock vs Scissors, Rock vs Rock
     if((playerSelection == "rock") && (computerSelection == "paper")) 
@@ -40,9 +43,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    for(let i = 0; i < 5; i++) {
-        let playerSelection = window.prompt("Choose: Rock, Paper, or Scissors")
-        let computerSelection = getComputerChoice()
-        console.log(playRound(playerSelection, computerSelection));
-    }
+    
 }
+
+btn.forEach(button => button.addEventListener('click', () => {
+    playRound(button.className, getComputerChoice());
+}))
