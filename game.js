@@ -3,6 +3,7 @@ const btn = document.querySelectorAll('button');
 const results = document.querySelector('.results')
 const gameText = document.createElement('p');
 const scoreText = document.createElement('p');
+//scoreText.style.marginLeft = '4px'
 let playerScore = 0;
 let computerScore = 0;
 let playerWin;
